@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply m-0 bg-gramophone-bg font-sans text-gramophone-text antialiased;
+    font-family: 'SF Pro Display', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(169, 112, 255, 0.12), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 0%, rgba(124, 92, 252, 0.08), transparent);
+  }
+
+  body[data-theme='light'] {
+    @apply bg-[#F5F6FA] text-[#0B1020];
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(169, 112, 255, 0.08), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 0%, rgba(124, 92, 252, 0.05), transparent);
+  }
+
+  body[data-theme='light'] .glass-panel {
+    @apply border-black/[0.06] bg-white/70;
+  }
+
+  input,
+  button,
+  select,
+  textarea {
+    @apply outline-none;
+    font: inherit;
+  }
+
+  button:not(:disabled) {
+    @apply cursor-pointer;
+  }
+
+  ::selection {
+    @apply bg-gramophone-accent/30 text-white;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  .premium-range {
+    appearance: none;
+    background: linear-gradient(to right, #a970ff 0 var(--range-progress), rgba(255,255,255,0.1) var(--range-progress) 100%);
+  }
+
+  .premium-range::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 9999px;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(169,112,255,0.25);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-[24px] border border-white/[0.08] bg-gramophone-card/80 shadow-card backdrop-blur-glass;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gramophone-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gramophone-bg;
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded-lg bg-white/[0.06];
+  }
+
+  .btn-ripple {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-ripple::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.12) 10%, transparent 10.01%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: width 0.5s ease, height 0.5s ease, opacity 0.4s ease;
+    border-radius: 9999px;
+    pointer-events: none;
+  }
+  .btn-ripple:active::after {
+    width: 240px;
+    height: 240px;
+    opacity: 1;
+    transition: width 0.25s ease, height 0.25s ease, opacity 0.2s ease;
+  }
+
+  .visually-hidden {
+    @apply sr-only;
+  }
+
+  .section-shell {
+    @apply glass-panel p-5 sm:p-6 lg:p-7;
+  }
+
+  .section-eyebrow {
+    @apply text-caption uppercase tracking-[0.22em] text-gramophone-accent;
+  }
+
+  .section-heading {
+    @apply text-section-title text-gramophone-text;
+  }
+
+  .section-subtitle {
+    @apply text-body text-gramophone-text-secondary;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-white via-white to-gramophone-text-secondary bg-clip-text text-transparent;
+  }
+
+  .text-gradient-accent {
+    @apply bg-gradient-to-r from-gramophone-accent to-gramophone-accent-secondary bg-clip-text text-transparent;
+  }
+
+  /* Small utility to standardize hover elevation/scale across components */
+  .hover-elevate {
+    transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
+  }
+  .hover-elevate:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+}

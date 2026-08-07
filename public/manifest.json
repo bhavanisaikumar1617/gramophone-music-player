@@ -1,0 +1,20 @@
+{
+  "short_name": "Gramophone",
+  "name": "Gramophone Listening Suite",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='100%25' height='100%25' fill='%23090B13'/%3E%3Ccircle cx='96' cy='76' r='64' fill='%23A970FF'/%3E%3Ctext x='96' y='120' font-size='96' text-anchor='middle' fill='%23FFFFFF' font-family='Inter, Arial'%3E%E2%99%AA%3C/text%3E%3C/svg%3E",
+      "type": "image/svg+xml",
+      "sizes": "192x192"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='100%25' height='100%25' fill='%23090B13'/%3E%3Ccircle cx='256' cy='160' r='160' fill='%23A970FF'/%3E%3Ctext x='256' y='320' font-size='256' text-anchor='middle' fill='%23FFFFFF' font-family='Inter, Arial'%3E%E2%99%AA%3C/text%3E%3C/svg%3E",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,141 @@
+/* Premium audio player overrides for react-h5-audio-player */
+.premium-player .rhap_container {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  color: #ffffff !important;
+}
+
+.premium-player .rhap_main {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.premium-player .rhap_progress-section {
+  flex: 1;
+  width: 100%;
+}
+
+.premium-player .rhap_progress-bar {
+  height: 6px !important;
+  border-radius: 9999px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.premium-player .rhap_progress-filled,
+.premium-player .rhap_progress-indicator {
+  background: linear-gradient(90deg, #7c5cfc, #a970ff) !important;
+}
+
+.premium-player .rhap_progress-indicator {
+  width: 14px !important;
+  height: 14px !important;
+  top: -4.5px !important;
+  margin-left: -7px !important;
+  box-shadow: 0 0 12px rgba(169, 112, 255, 0.6) !important;
+}
+
+.premium-player .rhap_time {
+  color: #7d8497 !important;
+  font-size: 0.8125rem !important;
+  font-weight: 500 !important;
+}
+
+.premium-player .rhap_controls-section {
+  margin-top: 0.5rem;
+}
+
+.premium-player .rhap_main-controls-button,
+.premium-player .rhap_volume-button,
+.premium-player .rhap_button-clear {
+  color: #ffffff !important;
+  transition: color 0.2s ease, transform 0.2s ease !important;
+}
+
+.premium-player .rhap_main-controls-button:hover,
+.premium-player .rhap_volume-button:hover {
+  color: #a970ff !important;
+  transform: scale(1.08);
+}
+
+.premium-player .rhap_play-pause-button {
+  width: 56px !important;
+  height: 56px !important;
+  background: linear-gradient(135deg, #7c5cfc, #a970ff) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 8px 24px rgba(169, 112, 255, 0.35) !important;
+}
+
+.premium-player .rhap_play-pause-button svg {
+  color: #ffffff !important;
+}
+
+.premium-player .rhap_volume-bar-area {
+  width: 80px !important;
+}
+
+.premium-player .rhap_volume-bar {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-radius: 9999px !important;
+}
+
+.premium-player .rhap_volume-indicator {
+  background: #a970ff !important;
+}
+
+.status-banner {
+  border: 1px solid rgba(169, 112, 255, 0.22);
+  background: linear-gradient(135deg, rgba(169, 112, 255, 0.12), rgba(255, 255, 255, 0.04));
+  color: #ffffff;
+  border-radius: 18px;
+  padding: 12px 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.empty-state {
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 20px;
+  color: #aab2c8;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.queue-item-glow {
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.queue-item-glow:hover {
+  transform: translateY(-1px);
+}
+
+/* Custom range used by PremiumPlayer */
+.premium-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: linear-gradient(90deg, rgba(169,112,255,0.9) var(--range-progress, 0%), rgba(255,255,255,0.06) var(--range-progress, 0%));
+  border-radius: 9999px;
+  outline: none;
+  transition: background-size 300ms linear, background 300ms linear;
+}
+.premium-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(169,112,255,0.28);
+  border: 2px solid rgba(255,255,255,0.12);
+  cursor: pointer;
+}
+.premium-range:focus {
+  box-shadow: 0 0 0 4px rgba(169,112,255,0.12);
+}
+
+/* Smaller volume range */
+.premium-range.w-20 { height: 6px; }
+
+.shadow-glow { box-shadow: 0 10px 30px rgba(169,112,255,0.12); }
